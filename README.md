@@ -2,7 +2,13 @@
 
 ## Table of Contents
 
+* [About](#about)
 * [Instructions](#instructions)
+
+## About
+
+Dynamic Landing Page for Marketing Content.
+In this project, you will build a multi-section landing page. Often times, you won't know how much content will be added to a page through a Content Management System (CSM) or an API. To handle this problem, you will dynamically add content to a web page. You'll be building a landing page that combines your skills with JavaScript, HTML, and CSS to update and control the page and create a dynamic user experience.
 
 ## Instructions
 
