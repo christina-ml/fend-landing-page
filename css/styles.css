@@ -84,10 +84,12 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
+    border: 3px solid plum;
 }
 
 .navbar__menu li {
     display: inline-block;
+    /* border: 3px solid plum; */
 }
 
 .navbar__menu .menu__link {
@@ -96,12 +98,14 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+    /* border: 3px solid plum; */
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+    /* border: 3px solid plum; */
 }
 
 /* Header Styles */
@@ -111,6 +115,7 @@ section {
     top: 0;
     width: 100%;
     z-index: 5;
+    /* border: 3px solid palegreen; */
 }
 
 /* Footer Styles */
@@ -142,10 +147,12 @@ section {
     }
 }
 
+/* for every even numbered paragraph */
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
     text-align: right; 
+    /* border: 4px solid greenyellow; */
 }
 
 /* Background Circles */
@@ -228,14 +235,16 @@ section.your-active-class {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
+/* floating shape 1 - opacity, speed, and direction */
 section.your-active-class .landing__container::before {
-    opacity: 1;
+    opacity: 0.5;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
+/* floating shape 2 - opacity, speed, and direction */
 section.your-active-class .landing__container::after {
-    opacity: 1;
-    animation: rotate 5s linear 0s infinite forwards reverse;
+    opacity: 0.5;
+    animation: rotate 3s linear 0s infinite forwards reverse;
 }
 
 /* Section Active Styles Keyframe Animations */
