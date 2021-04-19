@@ -53,7 +53,6 @@ for(i=0; i<sections.length; i++) {
 };
 
 // Add class 'active' to section when near top of viewport
-// window.addEventListener("scroll", activeSection);
 
 // Scroll to anchor ID using scrollTO event
 
