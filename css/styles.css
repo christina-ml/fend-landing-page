@@ -11,8 +11,6 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    /* background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%); */
     background: linear-gradient(0deg, rgba(70, 211, 216, 0.527) 0%, rgba(0,13,60,1) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
@@ -20,6 +18,12 @@ body {
     /* border: 2px solid red; */
 }
 
+main {
+    border: 1px solid transparent;
+    background-image: url("images/store-concept.png");
+    background-repeat: repeat-x;
+    background-size: 600px, 3vw;
+}
 
 /* Typeography General*/
 h1 {
@@ -28,6 +32,7 @@ h1 {
     margin: 2em 1rem;
     color: rgb(39, 193, 204);
     -webkit-text-stroke: 2px white;
+    
     /* border: 2px solid red; */
 }
 
@@ -89,7 +94,6 @@ section {
     color: green;
     /* border: 1px solid plum; */
     background: lightgray;
-    /* height: 50px; */
 }
 
 .navbar__menu li {
