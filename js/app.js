@@ -19,6 +19,7 @@
 */
 var nav = document.getElementById('navbar__list');
 var section = document.querySelectorAll('section');
+var dataNav = document.querySelectorAll('[data-nav]');
 
 /**
  * End Global Variables
@@ -53,6 +54,12 @@ for(i=0; i<sections.length; i++) {
 };
 
 // Add class 'active' to section when near top of viewport
+function toggleActive() {
+    const activeClass = 'your-active-class';
+    console.log(activeClass);
+}
+
+
 
 // Scroll to anchor ID using scrollTO event
 
@@ -67,5 +74,5 @@ for(i=0; i<sections.length; i++) {
 // Scroll to section on link click
 
 // Set sections as active
-
+window.addEventListener('scroll', toggleActive);
 
