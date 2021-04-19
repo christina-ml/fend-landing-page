@@ -18,13 +18,6 @@ body {
     /* border: 2px solid red; */
 }
 
-main {
-    border: 1px solid transparent;
-    background-image: url("images/store-concept.png");
-    background-repeat: repeat-x;
-    background-size: 600px, 3vw;
-}
-
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
@@ -71,6 +64,10 @@ p {
 /* ---- Layout Rules ---- */
 main {
     margin: 10vh 1em 10vh;
+    border: 1px solid transparent;
+    background-image: url("images/store-concept.png");
+    background-repeat: repeat-x;
+    background-size: 600px, 3vw;
 }
 
 .main-hero {
