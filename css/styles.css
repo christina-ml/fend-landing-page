@@ -84,12 +84,13 @@ section {
     padding-left: 0;
     margin: 0;
     text-align: right;
-    border: 3px solid plum;
+    color: green;
+    border: 1px solid plum;
+    /* height: 50px; */
 }
 
 .navbar__menu li {
     display: inline-block;
-    /* border: 3px solid plum; */
 }
 
 .navbar__menu .menu__link {
@@ -98,14 +99,12 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
-    /* border: 3px solid plum; */
 }
 
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
-    /* border: 3px solid plum; */
 }
 
 /* Header Styles */
