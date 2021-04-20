@@ -29,6 +29,16 @@ var dataNav = document.querySelectorAll('[data-nav]');
 // gets sections from array.from() method
 sections=Array.from(document.getElementsByTagName("section"));
 
+// space items evenly in navbar:
+nav.style.textAlign = "center";
+nav.style.display = "flex";
+nav.style.justifyContent = "space-evenly";
+
+// *** don't need: this is more limiting - you get stuck in a "grid" rather than letting the navbar grow
+// nav.style.display = "grid";
+// nav.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
+// nav.style.gridTemplateRows = "1fr";
+
 /**
  * End Helper Functions
  * Begin Main Functions
@@ -50,9 +60,10 @@ for(i=0; i<sections.length; i++) {
     
     // letter i is being used to loop over all the sections:
     // anchor.textContent = section[i].id;
-    anchor.textContent = section[i].id.slice(0, 7).concat(' ', [i + 1], ' | ');
+    anchor.textContent = section[i].id.slice(0, 7).concat(' ', [i + 1]);
 };
 
+// **************** working on this section 4-20-2021 **********************************
 // Add class 'active' to section when near top of viewport
 function toggleActive() {
     const activeClass = 'your-active-class';
