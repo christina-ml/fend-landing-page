@@ -23,10 +23,10 @@ h1 {
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
+
+    /* blue text with white outline */
     color: rgb(39, 193, 204);
     -webkit-text-stroke: 2px white;
-    
-    /* border: 2px solid red; */
 }
 
 /* This adds a headliner quote below the main heading */
