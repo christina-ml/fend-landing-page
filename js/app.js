@@ -19,7 +19,10 @@
 */
 var nav = document.getElementById('navbar__list');
 var section = document.querySelectorAll('section');
-var dataNav = document.querySelectorAll('[data-nav]');
+// var dataNav = document.querySelectorAll('[data-nav]');
+// const sectionID = section.id;
+
+
 
 /**
  * End Global Variables
@@ -60,16 +63,18 @@ for(i=0; i<sections.length; i++) {
     
     // letter i is being used to loop over all the sections:
     // anchor.textContent = section[i].id;
-    anchor.textContent = section[i].id.slice(0, 7).concat(' ', [i + 1]);
+    // anchor.textContent = section[i].id.slice(0, 7).concat(' ', [i + 1]);
+    // var dataNav = section[i].dataset.nav;
+    // anchor.textContent = dataNav;
+    anchor.textContent = section[i].dataset.nav;
 };
 
 // **************** working on this section 4-20-2021 **********************************
 // Add class 'active' to section when near top of viewport
-function toggleActive() {
-    const activeClass = 'your-active-class';
-    console.log(activeClass);
-}
-
+// function toggleActive() {
+//     const activeClass = 'your-active-class';
+//     console.log(activeClass);
+// }
 
 
 // Scroll to anchor ID using scrollTO event
@@ -85,5 +90,5 @@ function toggleActive() {
 // Scroll to section on link click
 
 // Set sections as active
-window.addEventListener('scroll', toggleActive);
+// window.addEventListener('scroll', toggleActive);
 
