@@ -23,7 +23,6 @@ var section = document.querySelectorAll('section');
 // const sectionID = section.id;
 
 
-
 /**
  * End Global Variables
  * Start Helper Functions
@@ -67,17 +66,63 @@ for(i=0; i<sections.length; i++) {
     // var dataNav = section[i].dataset.nav;
     // anchor.textContent = dataNav;
     anchor.textContent = section[i].dataset.nav;
+
+    // ** ALMOST... but this is not what I want. **
+    // changes the class to menu__link styles from CSS
+    // Attaches a class to the <li> tags, to become class='menu__link'
+    // li.setAttribute('class', 'menu__link');
+
+    // Can set more attributes, such as an id='planets' if I wanted to
+    // li.setAttribute('id', 'planets');
+
+    // setting the anchor tag to have a class of 'menu__link'
+    anchor.setAttribute('class', 'menu__link');
 };
 
-// **************** working on this section 4-20-2021 **********************************
 // Add class 'active' to section when near top of viewport
-// function toggleActive() {
-//     const activeClass = 'your-active-class';
-//     console.log(activeClass);
-// }
+// Add active class to the current button (highlight it)
+
 
 
 // Scroll to anchor ID using scrollTO event
+// selecting navbar, ul, and anchor elements
+const navlinks = document.querySelectorAll(".navbar__menu ul a");
+
+// loop over all links in navbar__menu
+for (const navlink of navlinks) {
+  navlink.addEventListener("click", onClick);
+}
+
+// on clicking the link
+function onClick(event) {
+  const href = this.getAttribute("href");
+  const topPos = document.querySelector(href).offsetTop;
+  event.preventDefault();
+ 
+  //   smooth scrolling when anchor link is clicked
+  scroll({
+    top: topPos,
+    behavior: "smooth"
+  });
+}
+
+
+// *** NOT WHAT I WANT this to do...
+// this scrolls to 800px, when you click on section 1 in the body.
+// this doesn't work for clicking on the links in the navbar.
+// let to = document.querySelector('section.your-active-class');
+// to.addEventListener('click', (ev)=>{
+//     document.documentElement.scrollTo(0, 800); //800px up from current position
+// });
+
+// maybe this will scroll to anchor? No...
+// let toAnchor = document.querySelectorAll(".navbar__menu ul a");
+// toAnchor.addEventListener('click', (ev)=>{
+//     document.documentElement.scrollTo(0, 1000); //250px up from current position
+// });
+
+
+// calling the function that scrolls to the anchor element
 
 /**
  * End Main Functions
@@ -90,5 +135,3 @@ for(i=0; i<sections.length; i++) {
 // Scroll to section on link click
 
 // Set sections as active
-// window.addEventListener('scroll', toggleActive);
-
