@@ -41,6 +41,11 @@ h1 {
     color: gold;
 }
 
+/* for smooth scrolling - can I add this using JavaScript? */
+/* html {
+    scroll-behavior: smooth;
+} */
+
 
 @media only screen and (min-width: 35em){
     h1 {
@@ -62,19 +67,23 @@ p {
 }
 
 /* ---- Layout Rules ---- */
+/* this is the main body - area visible right below the navbar */
 main {
-    margin: 10vh 1em 10vh;
+    /* margin: space on top, space on sides, space on bottom above footer */
+    margin: 5vh 0em 10vh;
     border: 1px solid transparent;
     background-image: url("images/telephone-sneaks.jpg");
     background-repeat: repeat-x;
     background-size: 600px, 3vw;
 }
 
+/* this is the main title of the page */
 .main-hero {
     min-height: 40vh;
     padding-top: 3em;
 }
 
+/* this is for placement of each section on the page */
 section {
     position: relative;
     min-height: 80vh;
@@ -83,14 +92,13 @@ section {
 
 /* ---- Module Rules ---- */
 
-/* Navigation Styles*/
+/* Navigation Styles */
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
     text-align: right;
-    color: green;
     /* border: 1px solid plum; */
-    background: lightgray;
+    /* background: lightgray; */
 }
 
 .navbar__menu li {
@@ -106,9 +114,11 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    background: rgb(39, 193, 204);
     color: #fff;
-    transition: ease 0.3s all;
+
+    /* slightly slower transition than starter code */
+    transition: ease 0.6s all;
 }
 
 /* Header Styles */
