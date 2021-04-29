@@ -83,7 +83,6 @@ for(i=0; i<sections.length; i++) {
 // Add active class to the current button (highlight it)
 
 
-
 // Scroll to anchor ID using scrollTO event
 // selecting navbar, ul, and anchor elements
 const navlinks = document.querySelectorAll(".navbar__menu ul a");
@@ -98,12 +97,14 @@ function onClick(event) {
   const href = this.getAttribute("href");
   const topPos = document.querySelector(href).offsetTop;
   event.preventDefault();
- 
-  //   smooth scrolling when anchor link is clicked
-  scroll({
+
+//   smooth scrolling when anchor link is clicked
+  var scrollOptions = {
     top: topPos,
     behavior: "smooth"
-  });
+  }
+ 
+  window.scrollTo(scrollOptions);
 }
 
 
@@ -135,3 +136,46 @@ function onClick(event) {
 // Scroll to section on link click
 
 // Set sections as active
+
+
+/**
+ * Begin Additional Content (not required)
+ * 
+*/
+
+// *** adding back to top image link
+// adding an image
+// create anchor element
+const anchor2 = document.createElement('a');
+var anchortwo = document.getElementById('section4').appendChild(anchor2);
+
+// create image tag to go inside anchor element
+const image = document.createElement('img');
+image.src  = 'image-js/up-arrow.png';
+var lastimage = document.getElementById('section4').appendChild(image);
+
+// set css styles for image
+lastimage.setAttribute('id', 'logo');
+lastimage.setAttribute('style', 'height: 100px');
+
+// attach image to anchor
+anchor2.appendChild(image);
+
+
+// *** scroll to top of page
+anchor2.addEventListener("click", forClick);
+
+// on clicking the link
+function forClick(event) {
+    const anc = this.getAttribute("a");
+    const topPos2 = document.querySelector(anc);
+    event.preventDefault();
+
+    //   smooth scrolling when anchor link is clicked
+    var scrollOptions = {
+        top: topPos2,
+        behavior: "smooth"
+    }
+ 
+  window.scrollTo(scrollOptions);
+}
