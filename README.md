@@ -5,7 +5,16 @@
 * [About](#about)
 * [Instructions](#instructions)
 * [Interface and Architecture](#interface-and-architecture)
+    - [Architecture](#architecture)
+    - [Usability](#usability)
+    - [Styling](#styling)
+    - [HTML Structure](#html-structure)
 * [Landing Page Behavior](#landing-page-behavior)
+    - [Navigation](#navigation)
+    - [Section Active State](#section-active-state)
+    - [Scroll to Anchor](#scroll-to-anchor)
+* [Additional Content (not required)](#additional-content-not-required)
+    - [Back to Top](#back-to-top)
 
 ## About
 
@@ -43,7 +52,7 @@ To do: Styling should be added for active states.
 
 ## HTML Structure
 
-There are at least 4 sections that have been added to the page.
+There are at least 4 sections that have been added to the page. Added Section 4.
 
 # Landing Page Behavior
 
@@ -58,3 +67,9 @@ To do: Make it clear which section is being viewed while scrolling through the p
 ## Scroll to Anchor
 
 To do: Make it so when clicking an item from the navigation menu, the link scrolls to the appropriate section.
+
+# Additional Content (not required)
+
+## Back to Top
+
+Added a back to top image link using JavaScript. Created anchor element, created image tag to go inside anchor element, set css styles for image, attached image to anchor. Then added an Event Listener to scroll to top of page, when clicking on the link which is the image at the bottom of section 4. Smooth scrolling when anchor link is clicked.
