@@ -137,6 +137,61 @@ function onClick(event) {
 
 // Set sections as active
 
+/**
+ * 
+ * check if item is in viewport - START
+ */
+// helper function
+ function isInViewport(section) {
+  const rect = section.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      
+      // if innerHeight or clientHeight of element &&
+      // if innerWidth or clientWidth of element
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// section.your-active-class
+
+// the area that should be active on the page that we want to remove the class from
+// const activeArea = document.querySelector('section.your-active-class');
+// the current active class name
+// curActiveClass = activeArea.classList[0];
+// returns the index DOMTokenList of "your-active-class"
+
+
+// activeArea.classList.remove('your-active-class');
+// creates class called inactive - unnecessary but a placeholder
+// activeArea.classList.add('inactive');
+
+function activeViewport(section) {
+  for(section of sections) { 
+    const rect = section.getBoundingClientRect();
+    if ((rect.left >= rect.top) && (rect.left <= rect.bottom)){
+      section.classList.add("your-active-class");
+      // section.setAttribute('style', 'border: 2px solid green');
+      section.setAttribute('style', 'background: linear-gradient(to bottom, rgba(0,0,40,0.3), rgba(0,0,0,0)')
+    }
+    else {
+      section.classList.remove("your-active-class");
+      section.removeAttribute('style', 'border: 2px solid green');
+      section.removeAttribute('style', 'background-image: url("images/telephone-sneaks.jpg")')
+      
+    } 
+  }
+}
+document.addEventListener('scroll', activeViewport);
+
+/**
+ * 
+ * check if item is in viewport - END
+ */
+
+
 
 /**
  * Begin Additional Content (not required)
@@ -178,4 +233,6 @@ function forClick(event) {
     }
  
   window.scrollTo(scrollOptions);
-}
+};
+
+
