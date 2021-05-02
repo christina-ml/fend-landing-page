@@ -48,7 +48,9 @@ To do: Make all features usable across modern desktop, tablet, and phone browser
 
 ## Styling
 
-To do: Styling should be added for active states.
+Styling should be added for active states.
+
+There is a slight color change to the background of each active section while scrolling.
 
 ## HTML Structure
 
@@ -58,17 +60,21 @@ There are at least 4 sections that have been added to the page. Added Section 4.
 
 ## Navigation
 
-To do: Navigation is built dynamically as an unordered list.
+Navigation is built dynamically as an unordered list.
 
 ## Section Active State
 
-To do: Make it clear which section is being viewed while scrolling through the page
+Make it clear which section is being viewed while scrolling through the page
 
 ## Scroll to Anchor
 
-To do: Make it so when clicking an item from the navigation menu, the link scrolls to the appropriate section.
+Make it so when clicking an item from the navigation menu, the link scrolls to the appropriate section.
 
 # Additional Content (not required)
+
+Added a back to top image link at the end of all the sections. When you click it, the page scrolls back to the top.
+
+Added a CSS animation to shift the active section to the left/right
 
 ## Back to Top
 

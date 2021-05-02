@@ -191,6 +191,7 @@ section:nth-of-type(odd) .landing__container::before {
     background-repeat: no-repeat;
 }
 
+/* floating shape - top right of even sections */
 section:nth-of-type(even) .landing__container::before {
     content: '';
     background: rgb(255,255,255);
@@ -204,8 +205,15 @@ section:nth-of-type(even) .landing__container::before {
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
+
+    /* neon alien with green border */
+    border: 2px solid green;
+    background-image: url("images/neon-alien.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
+/* floating shape - bottom right of 3rd section */
 section:nth-of-type(3n) .landing__container::after {
     content: '';
     background: rgb(255,255,255);
@@ -219,6 +227,12 @@ section:nth-of-type(3n) .landing__container::after {
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
+    border: 2px solid red;
+
+     /* neon alien with red border */
+    background-image: url("images/neon-alien.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /* Floating shape 2 */
@@ -250,6 +264,13 @@ section.your-active-class {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
     /* background-image: linear-gradient(to right, red , yellow); */
 }
+
+/* shifts active section to the left/right when scrolling to section */
+@keyframes mymove {
+    0%   {background-color:rgba(0, 0, 0, 0.1) 0%; left:0px; top:0px;}
+    50%  {background-color:rgba(0, 0, 0, 0) 100%; left:20px; top:0px;}
+    100% {background-color:rgba(0, 0, 0, 0.1) 0%; left:0px; top:0px;}
+  }
 
 /* floating shape 1 - opacity, speed, and direction */
 section.your-active-class .landing__container::before {

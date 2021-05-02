@@ -173,8 +173,12 @@ function activeViewport(section) {
     const rect = section.getBoundingClientRect();
     if ((rect.left >= rect.top) && (rect.left <= rect.bottom)){
       section.classList.add("your-active-class");
-      // section.setAttribute('style', 'border: 2px solid green');
-      section.setAttribute('style', 'background: linear-gradient(to bottom, rgba(0,0,40,0.3), rgba(0,0,0,0)')
+
+      // color change to active section - gradient
+      section.setAttribute('style', 'background: linear-gradient(to bottom, rgba(0,0,40,0.3), rgba(0,0,0,0)');
+
+      // style for animation: name, duration, # of times
+      section.setAttribute('style', 'animation: mymove 1s 1;');
     }
     else {
       section.classList.remove("your-active-class");
@@ -199,15 +203,23 @@ document.addEventListener('scroll', activeViewport);
 */
 
 // *** adding back to top image link
+
+// adding div section where it will go - at the end of all the sections
+// create div element & attach it to the main section
+const backToTop = document.createElement('div');
+var mainSection = document.querySelector('main');
+mainSection.appendChild(backToTop);
+backToTop.setAttribute('id', 'backTop');
+
 // adding an image
 // create anchor element
 const anchor2 = document.createElement('a');
-var anchortwo = document.getElementById('section4').appendChild(anchor2);
+var anchortwo = document.getElementById('backTop').appendChild(anchor2);
 
 // create image tag to go inside anchor element
 const image = document.createElement('img');
 image.src  = 'image-js/up-arrow.png';
-var lastimage = document.getElementById('section4').appendChild(image);
+var lastimage = document.getElementById('backTop').appendChild(image);
 
 // set css styles for image
 lastimage.setAttribute('id', 'logo');
