@@ -234,5 +234,3 @@ function forClick(event) {
  
   window.scrollTo(scrollOptions);
 };
-
-
