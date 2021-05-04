@@ -17,8 +17,8 @@
  * Define Global Variables
  * 
 */
-var nav = document.getElementById('navbar__list');
-var section = document.querySelectorAll('section');
+const nav = document.getElementById('navbar__list');
+const section = document.querySelectorAll('section');
 
 /**
  * End Global Variables
@@ -41,9 +41,11 @@ nav.style.justifyContent = "space-evenly";
 
 // build the nav
 // loops through the sections that exist on the page
+// creating a new 'class' for the li element, so I can use that for the 'active' class in navbar
 for(i=0; i<sections.length; i++) {
     let li = document.createElement('li');
     let anchor = document.createElement('a');
+    li.setAttribute('class', 'activeNav');
     li.appendChild(anchor);
     nav.appendChild(li);
 
@@ -66,7 +68,7 @@ for(i=0; i<sections.length; i++) {
  */
 
 // selecting navbar, ul, and anchor elements
-const navlinks = document.querySelectorAll(".navbar__menu ul a");
+let navlinks = document.querySelectorAll(".navbar__menu ul a");
 
 // loop over all links in navbar__menu
 for (const navlink of navlinks) {
@@ -80,7 +82,7 @@ function onClick(event) {
   event.preventDefault();
 
 //   smooth scrolling when anchor link is clicked
-  var scrollOptions = {
+  let scrollOptions = {
     top: topPos,
     behavior: "smooth"
   }
@@ -118,6 +120,9 @@ function onClick(event) {
   );
 }
 
+// defining variable for the li class name in navbar - to use for setting 'active' class
+let activeNav = document.getElementsByClassName('activeNav');
+
 // the area that should be active on the page that we want to remove the class from
 // color change to active section - gradient (active class is styled using CSS)
 function activeViewport(section) {
@@ -150,7 +155,7 @@ document.addEventListener('scroll', activeViewport);
 // adding div section where it will go - at the end of all the sections
 // create div element & attach it to the main section
 const backToTop = document.createElement('div');
-var mainSection = document.querySelector('main');
+const mainSection = document.querySelector('main');
 mainSection.appendChild(backToTop);
 backToTop.setAttribute('id', 'backTop');
 
@@ -158,12 +163,12 @@ backToTop.setAttribute('id', 'backTop');
 // create anchor element
 const anchor2 = document.createElement('a');
 anchor2.setAttribute('id', 'backToTop');
-var anchortwo = document.getElementById('backTop').appendChild(anchor2);
+const anchortwo = document.getElementById('backTop').appendChild(anchor2);
 
 // create image tag to go inside anchor element
 const image = document.createElement('img');
 image.src  = 'image-js/up-arrow-blue.png';
-var lastimage = document.getElementById('backTop').appendChild(image);
+const lastimage = document.getElementById('backTop').appendChild(image);
 
 // set css styles for image
 lastimage.setAttribute('id', 'logo');
@@ -198,7 +203,7 @@ function forClick(event) {
     event.preventDefault();
 
     //   smooth scrolling when anchor link is clicked
-    var scrollOptions = {
+    let scrollOptions = {
         top: topPos2,
         behavior: "smooth"
     }

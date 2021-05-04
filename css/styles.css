@@ -151,6 +151,7 @@ section {
     font-weight: bold;
     text-decoration: none;
     color: #000;
+    /* background: pink; */
 }
 
 .navbar__menu .menu__link:hover {
@@ -292,6 +293,18 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+/* for changing the background color of the nav items */
+li.activeNav {
+    background: orchid;
+}
+
+/* activeNav needs to change to your-active-class */
+li.your-active-class {
+    color: yellow;
+    background: yellow;
 }
 
 /* shifts active section to the left/right when scrolling to section */
