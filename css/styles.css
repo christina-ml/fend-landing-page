@@ -44,12 +44,6 @@ h1 {
     border-style: solid none none none; 
 }
 
-/* for smooth scrolling - can I add this using JavaScript? */
-/* html {
-    scroll-behavior: smooth;
-} */
-
-
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
@@ -67,6 +61,51 @@ h2 {
 p {
     line-height: 1.6em;
     color: #eee;
+}
+
+/* images in the paragraphs - in section content */
+/* odd numbered sections */
+.paraImagesOdd {
+    float: left;
+    margin-right: 20px;
+    width: 60%;
+}
+
+/* odd numbered sections */
+.paraImagesEven {
+    float: right;
+    margin-left: 20px;
+    width: 60%;
+}
+
+/* contains the logo & logoCaption - reverses order of paragraph and image */
+#backToTop {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* back to top button */
+#logo {
+    border: 3px solid white;
+    border-radius: 40px 40px 40px 40px;
+    padding: 5px;
+    margin-left: 20px;
+    background: white;
+    width: 6.5em;
+}
+
+/* back to top button - hover */
+#logo:hover {
+    border: 3px solid rgb(39, 193, 204);
+    border-radius: 40px 40px 40px 40px;
+    padding: 5px;
+    margin-left: 20px;
+    width: 6.5em;
+}
+
+/* for back to top button logo caption */
+#logoCaption {
+    margin-left: 25px;
 }
 
 /* ---- Layout Rules ---- */
@@ -270,7 +309,7 @@ section.your-active-class {
     0%   {background-color:rgba(0, 0, 0, 0.1) 0%; left:0px; top:0px;}
     50%  {background-color:rgba(0, 0, 0, 0) 100%; left:20px; top:0px;}
     100% {background-color:rgba(0, 0, 0, 0.1) 0%; left:0px; top:0px;}
-  }
+}
 
 /* floating shape 1 - opacity, speed, and direction */
 section.your-active-class .landing__container::before {

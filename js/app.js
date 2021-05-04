@@ -182,12 +182,10 @@ function activeViewport(section) {
     }
     else {
       section.classList.remove("your-active-class");
-      section.removeAttribute('style', 'border: 2px solid green');
-      section.removeAttribute('style', 'background-image: url("images/telephone-sneaks.jpg")')
-      
-    } 
+      }
+    }
   }
-}
+
 document.addEventListener('scroll', activeViewport);
 
 /**
@@ -214,16 +212,29 @@ backToTop.setAttribute('id', 'backTop');
 // adding an image
 // create anchor element
 const anchor2 = document.createElement('a');
+anchor2.setAttribute('id', 'backToTop');
 var anchortwo = document.getElementById('backTop').appendChild(anchor2);
 
 // create image tag to go inside anchor element
 const image = document.createElement('img');
-image.src  = 'image-js/up-arrow.png';
+image.src  = 'image-js/up-arrow-blue.png';
 var lastimage = document.getElementById('backTop').appendChild(image);
 
 // set css styles for image
 lastimage.setAttribute('id', 'logo');
 lastimage.setAttribute('style', 'height: 100px');
+
+// create paragraph for logo text, and give it an ID to grab it
+const logoText = document.createElement('p');
+logoText.setAttribute('id', 'logoCaption');
+anchortwo.appendChild(logoText);
+
+// grab the new paragraph with ID of logoCaption
+// add a string of words for the new paragraph with a TextNode
+const logoCap = document.getElementById('logoCaption');
+const logoWords = document.createTextNode("Back To Top");
+logoCap.appendChild(logoWords);
+
 
 // attach image to anchor
 anchor2.appendChild(image);
