@@ -45,13 +45,14 @@ For specific, detailed instructions, I looked at the project instructions in the
 
 This project has this structure:
 css
-- styles.css  
--- images
-- image-js
-index.html
-js
-- app.js
-README.md
+* css
+    * styles.css  
+    -- images
+    * image-js
+* index.html
+* js
+    * app.js
+* README.md
 
 ## Usability
 
