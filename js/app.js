@@ -119,15 +119,13 @@ function onClick(event) {
 }
 
 // the area that should be active on the page that we want to remove the class from
+// color change to active section - gradient (active class is styled using CSS)
 function activeViewport(section) {
   for(section of sections) { 
     const rect = section.getBoundingClientRect();
     if ((rect.left >= rect.top) && (rect.left <= rect.bottom)){
       section.classList.add("your-active-class");
-
-      // color change to active section - gradient
-      section.setAttribute('style', 'background: linear-gradient(to bottom, rgba(0,0,40,0.3), rgba(0,0,0,0)');
-
+    
       // style for animation: name, duration, # of times
       section.setAttribute('style', 'animation: mymove 1s 1;');
     }

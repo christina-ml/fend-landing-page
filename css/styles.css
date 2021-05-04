@@ -11,7 +11,7 @@
 
 /* ---- Base Rules ---- */
 body {
-    background: linear-gradient(0deg, rgb(155, 125, 179) 0%, rgba(39, 193, 204, 0.527) 100%);
+    background: linear-gradient(0deg, rgba(138,170,217,255) 0%, rgba(39, 193, 204, 0.527) 100%);
     margin: 0;
     font-family: 'Merriweather', serif;
     color: #fff;
@@ -88,6 +88,7 @@ p {
     border-radius: 40px 40px 40px 40px;
     padding: 5px;
     margin-left: 20px;
+    margin-top: 20px;
     background: white;
     width: 6.5em;
 }
@@ -98,6 +99,7 @@ p {
     border-radius: 40px 40px 40px 40px;
     padding: 5px;
     margin-left: 20px;
+    margin-top: 20px;
     width: 6.5em;
 }
 
@@ -289,7 +291,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* shifts active section to the left/right when scrolling to section */
