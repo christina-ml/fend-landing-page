@@ -19,9 +19,6 @@
 */
 var nav = document.getElementById('navbar__list');
 var section = document.querySelectorAll('section');
-// var dataNav = document.querySelectorAll('[data-nav]');
-// const sectionID = section.id;
-
 
 /**
  * End Global Variables
@@ -35,11 +32,6 @@ sections=Array.from(document.getElementsByTagName("section"));
 nav.style.textAlign = "center";
 nav.style.display = "flex";
 nav.style.justifyContent = "space-evenly";
-
-// *** don't need: this is more limiting - you get stuck in a "grid" rather than letting the navbar grow
-// nav.style.display = "grid";
-// nav.style.gridTemplateColumns = "1fr 1fr 1fr 1fr";
-// nav.style.gridTemplateRows = "1fr";
 
 /**
  * End Helper Functions
@@ -59,31 +51,20 @@ for(i=0; i<sections.length; i++) {
     // this jumps to each section on the page. It adds the #section (that goes through the loop each time), and starts at 1 instead of 0.
     anchor.setAttribute("href", section[i].innerHTML);
     anchor.href="#section" + (i + 1);
-    
-    // letter i is being used to loop over all the sections:
-    // anchor.textContent = section[i].id;
-    // anchor.textContent = section[i].id.slice(0, 7).concat(' ', [i + 1]);
-    // var dataNav = section[i].dataset.nav;
-    // anchor.textContent = dataNav;
     anchor.textContent = section[i].dataset.nav;
-
-    // ** ALMOST... but this is not what I want. **
-    // changes the class to menu__link styles from CSS
-    // Attaches a class to the <li> tags, to become class='menu__link'
-    // li.setAttribute('class', 'menu__link');
-
-    // Can set more attributes, such as an id='planets' if I wanted to
-    // li.setAttribute('id', 'planets');
 
     // setting the anchor tag to have a class of 'menu__link'
     anchor.setAttribute('class', 'menu__link');
 };
 
-// Add class 'active' to section when near top of viewport
-// Add active class to the current button (highlight it)
 
+/**
+ * Scroll to anchor ID using scrollTO event
+ * Add class 'active' to section when near top of viewport
+ * Add active class to the current button (highlight it)
+ * 
+ */
 
-// Scroll to anchor ID using scrollTO event
 // selecting navbar, ul, and anchor elements
 const navlinks = document.querySelectorAll(".navbar__menu ul a");
 
@@ -108,23 +89,6 @@ function onClick(event) {
 }
 
 
-// *** NOT WHAT I WANT this to do...
-// this scrolls to 800px, when you click on section 1 in the body.
-// this doesn't work for clicking on the links in the navbar.
-// let to = document.querySelector('section.your-active-class');
-// to.addEventListener('click', (ev)=>{
-//     document.documentElement.scrollTo(0, 800); //800px up from current position
-// });
-
-// maybe this will scroll to anchor? No...
-// let toAnchor = document.querySelectorAll(".navbar__menu ul a");
-// toAnchor.addEventListener('click', (ev)=>{
-//     document.documentElement.scrollTo(0, 1000); //250px up from current position
-// });
-
-
-// calling the function that scrolls to the anchor element
-
 /**
  * End Main Functions
  * Begin Events
@@ -138,7 +102,6 @@ function onClick(event) {
 // Set sections as active
 
 /**
- * 
  * check if item is in viewport - START
  */
 // helper function
@@ -155,19 +118,7 @@ function onClick(event) {
   );
 }
 
-// section.your-active-class
-
 // the area that should be active on the page that we want to remove the class from
-// const activeArea = document.querySelector('section.your-active-class');
-// the current active class name
-// curActiveClass = activeArea.classList[0];
-// returns the index DOMTokenList of "your-active-class"
-
-
-// activeArea.classList.remove('your-active-class');
-// creates class called inactive - unnecessary but a placeholder
-// activeArea.classList.add('inactive');
-
 function activeViewport(section) {
   for(section of sections) { 
     const rect = section.getBoundingClientRect();
@@ -186,21 +137,17 @@ function activeViewport(section) {
     }
   }
 
+// calling the function that scrolls to the anchor element for section
 document.addEventListener('scroll', activeViewport);
 
 /**
  * 
  * check if item is in viewport - END
- */
-
-
-
-/**
+ * 
  * Begin Additional Content (not required)
+ * Adding back to top image link
  * 
 */
-
-// *** adding back to top image link
 
 // adding div section where it will go - at the end of all the sections
 // create div element & attach it to the main section
@@ -235,12 +182,15 @@ const logoCap = document.getElementById('logoCaption');
 const logoWords = document.createTextNode("Back To Top");
 logoCap.appendChild(logoWords);
 
-
 // attach image to anchor
 anchor2.appendChild(image);
 
 
-// *** scroll to top of page
+/**
+ * Scroll to top of page - for the back to top image link
+ * 
+*/
+
 anchor2.addEventListener("click", forClick);
 
 // on clicking the link
