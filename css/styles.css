@@ -152,7 +152,6 @@ section {
     text-decoration: none;
     color: rgb(39, 193, 204);
     color: #000;
-    /* background: pink; */
 }
 
 .navbar__menu .menu__link:hover {
@@ -300,15 +299,11 @@ section.your-active-class {
 /* This is the first section on loading browser, using your-active-class */
 li.your-active-class {
     background: white;
-    /* border: 4px rgb(39, 193, 204); */
-    /* border-style: double none double none; */
 }
 
 /* This will change, looping through sections while scrolling */
 li.activeNav {
     background: rgb(39, 193, 204);
-    /* border: 4px rgb(39, 193, 204); */
-    /* border-style: double none double none; */
 }
 
 /* shifts active section to the left/right when scrolling to section */
