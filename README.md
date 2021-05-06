@@ -14,6 +14,8 @@
 * [Landing Page Behavior](#landing-page-behavior)
     - [Navigation](#navigation)
     - [Section Active State](#section-active-state)
+        - [Main Sections - Active](#main-sections-active)
+        - [Navbar - Active](#navbar-active)
     - [Scroll to Anchor](#scroll-to-anchor)
 * [Additional Content (not required)](#additional-content-not-required)
     - [Back to Top](#back-to-top)
@@ -76,7 +78,26 @@ Navigation is built dynamically as an unordered list.
 
 ## Section Active State
 
+### Main Sections - Active
+
 Make it clear which section is being viewed while scrolling through the page. This is done by the slight color change to the background, and also a CSS animation to move the section left/right while scrolling.
+
+### Navbar - Active
+
+First, I was able to loop through the main sections with an 'active' state. Then I needed to find a way to do the same to the items in the navbar while scrolling, to keep track of where the user is. This was difficult to figure out.
+
+How I did it:
+
+I figured out that the class name has to be added/removed in order to indicate whether or not it's 'active'. As you scroll through the page, each section visible in the viewport will have a class, which will be available only when you are viewing that section. So what happens is the 'active' class appears while you're scrolling to it, and then disappears when you move to the next section. This is done using a loop in JavaScript.
+
+I needed to add an 'active' class to the first navbar item. Otherwise the code was highlighting the 1st, 2nd, 3rd, and 4th in order. And then staying stuck/not removing the class.
+
+I set the class to all sections as 'none' as a placeholder, and then added a class of 'your-active-class' to the first item.
+
+Then I switched out the 'your-active-class' to loop through while scrolling and become 'activeNav'.
+
+Then changed the CSS to have it be a different color while scrolling.
+
 
 ## Scroll to Anchor
 

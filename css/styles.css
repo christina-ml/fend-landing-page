@@ -150,6 +150,7 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
+    color: rgb(39, 193, 204);
     color: #000;
 }
 
@@ -292,6 +293,17 @@ section:nth-of-type(3n + 1) .landing__container::after {
 section.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Begin active Nav Link colors while scrolling */
+/* This is the first section on loading browser, using your-active-class */
+li.your-active-class {
+    background: white;
+}
+
+/* This will change, looping through sections while scrolling */
+li.activeNav {
+    background: rgb(39, 193, 204);
 }
 
 /* shifts active section to the left/right when scrolling to section */
