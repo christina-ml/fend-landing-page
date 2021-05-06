@@ -41,17 +41,18 @@ nav.style.justifyContent = "space-evenly";
 
 // build the nav
 // loops through the sections that exist on the page
+// creating a new 'class' for the li element, so I can use that for the 'active' class in navbar
 for(i=0; i<sections.length; i++) {
     let li = document.createElement('li');
+
+    // sets nav sections as 1, 2, 3, 4...depending on how many sections
+    li.setAttribute('id', "li-section" + (i + 1));
     let anchor = document.createElement('a');
 
-    // add a unique ID to each li when building the navbar
-    // which represents the section id that's related to
-    // and should match to what it been added in 'href' attribute:
-    li.setAttribute('id', "li-section" + (i + 1));
+    // sets all li elements with a class activeNav
+    li.setAttribute('class', 'activeNav');
+    
 
-    // creating class for li element - activeNav & adding it to the navbar
-    li.setAttribute('class', 'none');
     li.appendChild(anchor);
     nav.appendChild(li);
 
@@ -65,11 +66,6 @@ for(i=0; i<sections.length; i++) {
     anchor.setAttribute('class', 'menu__link');
 };
 
-// change section 1's li class in the navbar
-// now there's your-active-class on the first one, and all others say activeNav
-const changeLiClass = document.getElementById('li-section1');
-changeLiClass.classList.add('your-active-class');
-changeLiClass.classList.remove('activeNav');
 
 /**
  * Scroll to anchor ID using scrollTO event
@@ -79,7 +75,7 @@ changeLiClass.classList.remove('activeNav');
  */
 
 // selecting navbar, ul, and anchor elements
-const navlinks = document.querySelectorAll(".navbar__menu ul a");
+let navlinks = document.querySelectorAll(".navbar__menu ul a");
 
 // loop over all links in navbar__menu
 for (const navlink of navlinks) {
@@ -88,28 +84,23 @@ for (const navlink of navlinks) {
 
 // on clicking the link
 function onClick(event) {
-  event.preventDefault();
+  // const previousLi = document.querySelector('.activeNav');
+  // previousLi && previousLi.classList.remove(".activeNav");
+
   const href = this.getAttribute("href");
   const topPos = document.querySelector(href).offsetTop;
-  
 
-  // In onClick function, get the previously clicked navbar item to remove the active class from it
-  const previousLi = document.querySelector('.activeNav');
+  // const sectionID = href.slice(href.indexOf("nav") + 1);
+  // const clickedLi = document.querySelector("#li-section" + sectionID);
+  // clickedLi.setAttribute("class", "activeNav");
 
-  // check if there is an active element, if so, then remove the class
-  previousLi && previousLi.classList.remove("activeNav");
-
-  // select the li item that matches the clicked link and set its class to active
-  const sectionID = href.slice(href.indexOf("n") + 1);
-  const clickedLi = document.querySelector("#li-section" + sectionID);
-  clickedLi.setAttribute("class", "activeNav");
+  event.preventDefault();
 
 //   smooth scrolling when anchor link is clicked
   let scrollOptions = {
     top: topPos,
     behavior: "smooth"
   }
-  
  
   window.scrollTo(scrollOptions);
 }
@@ -144,6 +135,10 @@ function onClick(event) {
   );
 }
 
+// defining variable for the li class name in navbar - to use for setting 'active' class
+let activeNav = document.getElementsByClassName('activeNav');
+
+
 // the area that should be active on the page that we want to remove the class from
 // color change to active section - gradient (active class is styled using CSS)
 function activeViewport(section) {
@@ -151,15 +146,21 @@ function activeViewport(section) {
     const rect = section.getBoundingClientRect();
     if ((rect.left >= rect.top) && (rect.left <= rect.bottom)){
       section.classList.add("your-active-class");
-
+    
       const previousLi = document.querySelector('.activeNav');
+
+      previousLi && previousLi.classList.remove('.activeNav');
       // check if there is an active element, if so, then remove the class
       previousLi && previousLi.classList.remove("activeNav");
 
-      // get the related navbar item using section id and add the active class to it
       const clickedLi = document.querySelector("#li-" + section.id);
       clickedLi.setAttribute("class", "activeNav");
-    
+      // removes activeNav class
+      clickedLi.classList.remove('activeNav');
+
+      // adds your-active-class class
+      clickedLi.classList.add('your-active-class');
+
       // style for animation: name, duration, # of times
       section.setAttribute('style', 'animation: mymove 1s 1;');
     }

@@ -150,6 +150,7 @@ section {
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
+    color: rgb(39, 193, 204);
     color: #000;
     /* background: pink; */
 }
@@ -295,16 +296,19 @@ section.your-active-class {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-
-/* for changing the background color of the nav items */
-li.activeNav {
-    background: orchid;
+/* Begin active Nav Link colors while scrolling */
+/* This is the first section on loading browser, using your-active-class */
+li.your-active-class {
+    background: white;
+    /* border: 4px rgb(39, 193, 204); */
+    /* border-style: double none double none; */
 }
 
-/* activeNav needs to change to your-active-class */
-li.your-active-class {
-    color: yellow;
-    background: yellow;
+/* This will change, looping through sections while scrolling */
+li.activeNav {
+    background: rgb(39, 193, 204);
+    /* border: 4px rgb(39, 193, 204); */
+    /* border-style: double none double none; */
 }
 
 /* shifts active section to the left/right when scrolling to section */
